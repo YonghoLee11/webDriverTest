@@ -312,3 +312,12 @@ public class webDriverTeset {
 </project>
 
 
+ChromeOptions chromeOptions = new ChromeOptions();
+WebDriverManager.chromedriver().setup();
+WebDriver driver = new ChromeDriver(chromeOptions);
+
+driver.get("https://www.naver.com/");
+WebDriverWait w = new WebDriverWait(driver,Duration.ofSeconds(30));
+ w.until(ExpectedConditions.presenceOfElementLocated (By.id("aa")));
+//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+driver.close();
